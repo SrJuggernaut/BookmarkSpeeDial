@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-gray-100
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    @apply bg-gray-100 text-gray-900
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  @apply m-0 p-0
+}
+
+body, html {
+  min-height: 100dvh;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  @apply list-none
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  @apply max-w-full h-auto italic bg-no-repeat bg-cover;
+  vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1 {
+  @apply text-4x;
+}
+
+h2 {
+  @apply text-3x;
+}
+
+h3 {
+  @apply text-2.5x;
+}
+
+h4 {
+  @apply text-2x;
+}
+
+h5 {
+  @apply text-1.5x;
+}
+
+h6 {
+  @apply text-1x;
+}

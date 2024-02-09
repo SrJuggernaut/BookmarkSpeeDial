@@ -1,13 +1,13 @@
 {
   "name": "bookmarkspeedial",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "develop": "vite",
-    "develop:extension": "bun --watch run ./server.ts",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "develop": "bun --watch run ./server.ts",
+    "build": "rm -rf dist && tsc && vite build && bun run pack",
+    "preview": "vite preview",
+    "pack": "rm -f BookmarkSpeeDial.xpi && (cd dist && zip -rm BookmarkSpeeDial.xpi *)"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

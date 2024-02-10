@@ -4,8 +4,9 @@
   "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "develop": "bun --watch run ./server.ts",
+    "develop": "NODE_ENV=production bun run ./server.ts",
     "build": "rm -rf dist && tsc && vite build && bun run pack",
+    "build:nopack": "rm -rf dist && tsc && vite build",
     "preview": "vite preview",
     "pack": "rm -f BookmarkSpeeDial.xpi && (cd dist && zip -rm BookmarkSpeeDial.xpi *)"
   },

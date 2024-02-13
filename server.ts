@@ -3,7 +3,6 @@ import { watch } from 'fs'
 import path from 'path'
 
 const build = async (): Promise<void> => {
-  await $`rm -rf dist`.text()
   const exit = await $`bun run build:nopack`.text()
   console.log(exit)
 }
@@ -13,7 +12,7 @@ build()
 
 const controller = new AbortController()
 
-const watcher = watch(path.resolve(__dirname, 'src'), { signal: controller.signal, recursive: true })
+const watcher = watch(path.resolve(__dirname, 'src'), { signal: controller.signal, recursive: true, persistent: true })
 
 watcher.on('change', (change, filename) => {
   console.log(`Detected ${change} in ${typeof filename === 'string' ? filename : `Buffer : ${filename.toString()}`}`)
